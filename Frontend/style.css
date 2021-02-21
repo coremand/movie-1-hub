@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: 'Pacifico', cursive;
+   background-image: url(./img/nicholas-green-nPz8akkUmDI-unsplash.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: top;
+   background-attachment: fixed;
+   text-align: center;
+   padding: 30px;
+}
+
+
+
+.heading-main1 {
+    color: rgb(255, 255, 255) ;
+    text-transform: uppercase;
+}
+
+.heading-primary1 {
+    display: block;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+.heading-secondary1 {
+    display: block;
+    letter-spacing: 17.4px;
+    font-weight: 700px;
+}
+.login-section {
+    padding: 15rem 0;
+    background-color: rgba(2, 138, 201,0.4);
+    border-radius: 5px;
+}
+
+.row {
+    max-width: 90rem;
+    margin: 0 auto;
+    
+}
+
+.login-form1{
+    background-image: linear-gradient(105deg, rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.9) 50%,
+    transparent 50%),url(./img/pexels-belle-co-1000445.jpg);
+    background-size: cover;
+    height: 40rem;
+    border-radius: 5px;
+}
+.form1-container {
+    width: 50%;
+    padding: 6rem;
+}
+.form1-text{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    margin-bottom: 5rem;
+}
+input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+
+}
+button{
+    width: 20rem;
+    outline: none;
+}
+.button2__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3rem;
+}
+.button__form {
+    margin-right: 4.5rem;
+}
