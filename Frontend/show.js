@@ -1,5 +1,5 @@
-const searchParams = new URLSearchParams(window.location.search);
-const id = searchParams.get("id");
+//const searchParams = new URLSearchParams(window.location.search);
+//const id = searchParams.get("id");
 
 const baseURL = "http://localhost:3000"
 const movieURL = `${baseURL}/movies`
@@ -8,6 +8,7 @@ fetch(movieURL)
 .then(response => response.json())
 .then(result => {
     let newData = result.results
+    console.log(newData)
     let showData = document.querySelector(".show__page")
     let ul = document.querySelector(".list")
     newData.forEach(object => {
