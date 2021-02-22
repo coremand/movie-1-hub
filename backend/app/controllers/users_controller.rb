@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
     
+    #before_action :verify_auth, only: [:index, :update, :destroy]
+
+
     def index
         @users = User.all
         render json: @users

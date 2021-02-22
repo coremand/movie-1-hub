@@ -11,12 +11,13 @@ class AuthenticationController < ApplicationController
                 status: :unauthorized
             else
                 #dont send up to github
-                secret = "specific to app"
+               # secret = "specific to app"
+                 secret = Rails.application.secrets.secret_key_base
                 #always send user id
                 payload = {user_id: @user.id}
                 token = JWT.encode(payload, secret)
 
-                render json: {token: token}
+                render json: { user: @user, token: token}
             end
         end
 
