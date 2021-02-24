@@ -1,29 +1,45 @@
 //const searchParams = new URLSearchParams(window.location.search);
 //const id = searchParams.get("id");
 
+const ul = document.querySelector(".list")
+
 const baseURL = "http://localhost:3000"
 const movieURL = `${baseURL}/movies`
+const searchURL = `${baseURL}/search`
 
 fetch(movieURL)
 .then(response => response.json())
-.then(result => {
+.then(result => displaymovies(result))
+    
+
+const $search = document.querySelector(".search")
+
+$search.addEventListener("submit", searchMovie )
+
+function searchMovie(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target)
+
+    const movieName = formData.get("movie")
+
+
+    fetch(`http://localhost:3000/search?name=${movieName}`)
+      .then(response => response.json())
+      .then(result => {
+          ul.innerHTML=""
+          displaymovies(result)
+      })
+};
+
+
+
+function displaymovies(result) {
     let newData = result.results
-    console.log(newData)
-    let showData = document.querySelector(".show__page")
-    let ul = document.querySelector(".list")
+
     newData.forEach(object => {
         let path = `https://image.tmdb.org/t/p/w500/${object.poster_path}`;
         let li = document.createElement("li")
-       // let img = document.createElement("img")
-
-       // img.setAttribute("src",`${path}`)
-       // img.setAttribute("alt","movie-picture")
-       // img.setAttribute("width","300rem")
-        
-      //  li.append(img)
-      //  ul.append(li)
-       
-      //  showData.appendChild(ul)
 
       let div = document.createElement("div")
       let img = document.createElement("img")
@@ -64,14 +80,9 @@ fetch(movieURL)
       
 
     })
-
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
     })
-});
+}
 
-const $image = document.querySelector(".user-nav__current-user-pics")
-$image.addEventListener("click", (event) => {
-    console.log("you clicked me")
-})

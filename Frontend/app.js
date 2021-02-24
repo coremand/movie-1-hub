@@ -1,9 +1,15 @@
 
-const form = document.querySelector("form")
+const form = document.querySelector("#auth-form")
+const login = document.querySelector("#login-button")
+
 const baseURL = "http://localhost:3000"
 const createURL = `${baseURL}/users`
+const loginURL = `${baseURL}/login`
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", signup)
+login.addEventListener("click", (event) => singup(event,"login"))
+
+function signup(event){
     event.preventDefault();
     
     const formdata = new FormData(event.target);
@@ -28,4 +34,4 @@ form.addEventListener("submit", (event) => {
     .then(user => document.location.href = `http://localhost:3001/show.html?user_id=${user.id}` )
 
     event.target.reset();
-});
+};

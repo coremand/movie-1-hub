@@ -52,10 +52,14 @@ body{
 }
 .left-side__nav {
     background-color: var(--back-color);
-    flex: 0 0 18%;
+   /*flex: 0 0 20%;*/
     color:#000000;
-    display: flex;
-    justify-content: center;
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    
+   /* display: flex;
+    justify-content: center;*/
 }
 
 .show__page {
@@ -63,11 +67,9 @@ body{
     flex: 1;
     border: 2px solid #000000;
     border-top: 1px solid yellow;
+    margin-left: 400px;
 }
-.right-side__nav {
-    background-color: var(--back-color);
-    flex: 0 0 18%;
-}
+
 .logo{
     font-family: 'Lobster', cursive;
     padding: 2.5rem;
@@ -83,16 +85,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 2rem;
 }
 .search__input {
-    font-family: inherit;
     color: #000000;
     border: none;
     padding: .7rem 2rem;
     border-radius: 100px;
     width: 90%;
     transition: all .2s;
-    margin-right: -3.5rem;
+    margin-right: -3.0rem;
+    font-size: 2rem;
 }
 .search__input:focus{
     outline: none;
@@ -168,5 +171,11 @@ body{
 .card {
     background-color: var(--text-color);
     margin-bottom: 2rem;
+}
+h1 {
+    margin: 2rem;
+    font-size: 5rem;
+    font-family:'Lobster', cursive ;
+    text-align: center;
 }
 
